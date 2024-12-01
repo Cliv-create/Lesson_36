@@ -535,11 +535,12 @@ public:
 		// int array_element_count = sizeof(path_array) / sizeof(*path_array);
 		// Test element_count because: https://stackoverflow.com/questions/4839626/element-count-of-an-array-in-c
 		// int array_element_count = size(*path_array);
-		cout << "COUNT: " << N << "\n";
+		
+		// cout << "COUNT: " << N << "\n";
 		
 		// ifstream input_from_file(path_array[current_file]);
 
-		for (int i = 0; i < N + 1; i++)
+		for (int i = 0; i < N; i++)
 		{
 			ifstream input_from_file(path_array[i]); // Opening files
 			unsigned int number_of_lines = 0;
@@ -549,7 +550,7 @@ public:
 			while (getline(input_from_file, line)) {
 				++number_of_lines;
 			}
-			cout << "LINE NUMBER: " << number_of_lines << "\n";
+			// cout << "LINE NUMBER: " << number_of_lines << "\n";
 			
 			random_line = Application::Random(1, number_of_lines);
 
@@ -562,20 +563,20 @@ public:
 				return;
 			}
 			
-			
-
+			input_from_file.clear();
 			input_from_file.seekg(0, ios::beg);
 
 			for (int i = 0; i < random_line; i++) {
-				input_from_file.getline(line, sizeof(line);
+				// input_from_file.getline(line, sizeof(line));
+				getline(input_from_file, line);
 			}
-
-			input_from_file.getline(line, sizeof(line);
+			getline(input_from_file, line);
+			// input_from_file.getline(line, sizeof(line));
 			
 			cout << line << " ";
 			
 			// Application::Random(1, 50);
-
+			input_from_file.close();
 		}
 
 	}
@@ -587,11 +588,15 @@ const char* FileStreamsDemo::path = "file.txt";
 int main() {
 	system("title File Streams CPP");
 	system("color 0F");
-
+	
 	string patharray[] = {
 		"who.txt",
 		"where.txt",
-		"when.txt"
+		"when.txt",
+		"with_who.txt",
+		"did_what.txt",
+		"results.txt",
+		"moral.txt"
 	};
 	FileStreamsDemo demostring;
 	demostring.SentenceComposition(patharray);

@@ -1,0 +1,6 @@
+danced on DanceDanceRevolution dance pads,
+ran around the parking lot,
+decided to paint all the walls,
+repainted the fence,
+assembled a working PC,
+debugged C++, searching for "{" bracket mismatch, that turned out to be missed ")",

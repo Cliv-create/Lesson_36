@@ -553,7 +553,7 @@ public:
 			
 			random_line = Application::Random(1, number_of_lines);
 
-			/*
+			
 			if (number_of_lines > 0) {
 				random_line = Application::Random(1, number_of_lines);
 			}
@@ -561,7 +561,7 @@ public:
 				cout << "File contains 0 lines of text.";
 				return;
 			}
-			*/
+			
 			
 
 			input_from_file.seekg(0, ios::beg);
